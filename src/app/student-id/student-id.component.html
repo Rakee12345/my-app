@@ -1,20 +1,33 @@
-<div class="parent ">
-  <div class="child" *ngFor="let studentId of studentId">
-    
-    
-    <div class="data">
-    
-    <h3>{{studentId.name}}</h3>
-    <p>phone: {{studentId.phone}}</p>
-    <p>city: {{studentId.city}}</p>
-    <p>dob: {{studentId.dob}}</p>
-    <p>email: {{studentId.email}}</p>
-    <p>school_name: {{studentId.school_name}}</p>
-    <p>school_city: {{studentId.school_city}}</p>
-    <p>school_pin: {{studentId.school_pin}}</p>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+
+</head>
+<body>
+  <div class="card" *ngFor="let studentId of studentId">
+      <div class="card-header" >
+          {{studentId.school_name}}</div>
+      <div class="middle">
+          <!-- card slot section  -->
+          <div class="left">
+              <label>Name: {{studentId.name}}</label>
+              <label>Phone: {{studentId.phone}}</label>
+              <label>DOB: {{studentId.dob}}</label>
+              <label>City: {{studentId.city}}</label>
+              <label>Email:  {{studentId.email}}</label>
+
+          </div>
+          <div class="right">
+              <img src="{{studentId.profile_picture}}" alt="" width="80px">
+
+          </div>
+         
+      </div>      
+      <div class="card-footer">
+          <button class="danger-btn">Delete</button>
+      </div>
   </div>
-  <img class="image1" src="{{studentId.school_logo}}" alt="">
-    <img class="image2" src="{{studentId.profile_picture}}" alt="">
-  </div>
-    
-    </div>
+</body>
+</html>

@@ -1,37 +1,75 @@
-.parent{
-    width: 100%;
-    height: 100%;
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #008080;
+    margin: 0;
+    padding: 20px;
     display: flex;
-    background-color: red;
     flex-wrap: wrap;
-    position: absolute;
-   
+    justify-content: center;
 }
-.child{
-   width: 30%;
-   height: 45%;
-   background-color: orange;
-   justify-content: space-between;
-   margin: 5px;
-   
-}
-.image1{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    opacity: 0.2;
-    
 
+/* Card container styling */
+.card {
+    background-color: #ffffe0; 
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin: 15px;
+    padding: 15px;
+    width: 300px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.image2{
-    width: 40%;
-    height: 50%;
-    position: relative;
+
+/* Card header styling */
+.card-header {
+    background-color: #add8e6; 
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
 }
-.data{
-    position: relative;
-    color: white;
-    font-size: 15px;
+
+/* Middle section styling */
+.middle {
+    display: flex;
+    margin-top: 10px;
+}
+
+/* Left section for labels */
+.left {
+    flex: 1;
+    padding: 5px;
+    font-size: 0.9em;
+}
+
+/* Right section for image */
+.right img {
+    border-radius: 5px;
+    object-fit: cover;
+    width: 80px;
+    height: 100px;
+}
+
+/* Card footer styling */
+.card-footer {
+    margin-top: 10px;
     text-align: right;
-      
+}
+
+.danger-btn {
+    background-color: #ff4d4d; 
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.danger-btn:hover {
+    background-color: #d93636; 
 }

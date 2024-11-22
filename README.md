@@ -87,6 +87,19 @@ GIT:
 
    ***) first time push suggestion command with -f
 
+   create branch(git hub)
+
+   git fecth
+   git checkout xxxxx
+   git branch
+
+   git add .
+   git commit -m "xxx"
+   git push
+
+   pull request
+   (git hub)
+
 
 
 
