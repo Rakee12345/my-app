@@ -28,6 +28,7 @@ import { CreateVehicleComponent } from './create-vehicle/create-vehicle.componen
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { StudentIdComponent } from './student-id/student-id.component';
 import { CreateStudentIdComponent } from './create-student-id/create-student-id.component';
+import { SocialProfileComponent } from './social-profile/social-profile.component';
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
@@ -57,6 +58,7 @@ const routes: Routes = [
       {path:'create-account',component:CreateAccountComponent},
       {path:'student_id',component:StudentIdComponent},
       {path:'create-studentId',component:CreateStudentIdComponent},
+      {path:'social-profile',component:SocialProfileComponent},
       
 
 

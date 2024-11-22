@@ -1,0 +1,47 @@
+<div class="mainContainer">
+    <div class="header">
+      <h2>Social Profiles</h2>
+    </div>
+    <div class="childContainer px-4 pt-2">
+      <div class="cards card my-2 p-3" *ngFor="let profile of profiles">
+        <div class="circleDiv">
+          <label for="" *ngIf="profile.privacySettings.showEmail==true">{{ profile.email }}</label>
+        </div>
+        <h4><b>{{ profile.fullName }}</b></h4>
+        <label>{{ profile.username }}</label>
+        <label
+          ><i>{{ profile.bio }}</i></label
+        >
+        <label><b>Location :</b> {{ profile.location }}</label>
+  
+        <label for="" *ngIf="profile.privacySettings.showBirthDate==true"><b>Birth date :</b>{{profile.birthDate}}</label>
+  
+        <label><b>Work : </b>{{ profile.work }}</label>
+        <label
+          ><b>Hobbies : </b>
+          <label *ngFor="let hobbie of profile.hobbies">
+            {{ hobbie }} ,</label
+          ></label
+        >
+        <label for=""
+          ><b>Interests : </b
+          ><label *ngFor="let intrest of profile.interests">
+            {{ intrest }} ,
+          </label>
+        </label>
+  
+        <a href="{{ profile.homepage }}">Visit Homepage</a>
+        <div class="userContent mt-2">
+          <label>Followers : {{ profile.followersCount }}</label>
+        </div>
+        <div class="userPosts mt-2 ">
+          <div class="userContent">
+            <label>Following : {{ profile.followingCount }}</label>
+          </div>
+          <div class="userContent">
+            <label>Posts : {{ profile.postsCount }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

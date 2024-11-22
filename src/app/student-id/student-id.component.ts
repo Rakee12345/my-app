@@ -63,6 +63,7 @@ pagination(){
 }
 
 delete(id:string){
+  console.log(id)
   if(confirm("Are you sure you want to delete this student ID?")){
     this._studentIDService.deleteStudentId(id).subscribe(
       (data: any) => {
@@ -73,5 +74,9 @@ delete(id:string){
       }
     )
   }
+}
+
+edit(){
+  alert("Edit Student")
 }
 }
