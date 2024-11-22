@@ -1,12 +1,39 @@
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student id</title>
+<input type="text" placeholder="search" [(ngModel)]="term" (keyup)="filter()">
+<!-- sorted -->
+ <select [(ngModel)]="column">
+    <option>school_name</option>
+    <option>Name</option>
+    <option>Phone</option>
+    <option>DOB</option>
+    <option>City</option>
+    <option>Email</option>
+    <option>profile_picture</option>
+</select>
+<select [(ngModel)]="order">
+    <option value="asc">ascending</option>
+    <option value="desc">descending</option>
+</select>
+<button (click)="sort()" class="btn btn-primary">Sort</button>
+  
 
-</head>
+<!-- pagination -->
+ <select [(ngModel)]="limit">
+    <option>10</option>
+    <option>20</option>
+    <option>30</option>
+</select>
+
+<select [(ngModel)]="page">
+   <option>1</option>
+   <option>2</option>
+   <option>3</option>
+</select>
+<button (click)="pagination()" class="btn btn-info">pagination</button>
+
 <body>
-  <input type="text" placeholder="search" [(ngModel)]="term" (keyup)="filter()">
+ 
+
+
   <div class="card" *ngFor="let studentId of studentId">
       <div class="card-header" >
           {{studentId.school_name}}</div>
@@ -18,6 +45,7 @@
               <label>DOB: {{studentId.dob}}</label>
               <label>City: {{studentId.city}}</label>
               <label>Email:  {{studentId.email}}</label>
+              
 
           </div>
           <div class="right">
@@ -27,8 +55,7 @@
          
       </div>      
       <div class="card-footer">
-          <button class="danger-btn">Delete</button>
+          <button (click)="delete(studentId.id)" class="btn btn-danger">Delete</button>
       </div>
   </div>
 </body>
-</html>
