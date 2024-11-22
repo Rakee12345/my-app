@@ -81,9 +81,11 @@ GIT:
 
 3) Sync code
 
-   git add.
-   git commit -m "xxx"
+   git add .                     changes->stagedchanges
+   git commit -m "xxx"           staged changes ->
    git push
+
+   ***) first time push suggestion command with -f
 
 
 
