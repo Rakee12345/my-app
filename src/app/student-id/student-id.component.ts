@@ -8,7 +8,7 @@ import { StudentIdService } from '../student-id.service';
 })
 export class StudentIdComponent {
    studentId:any = [];
-   term:string ="";
+   
 
    constructor(private _studentIDService:StudentIdService){
 
@@ -22,4 +22,17 @@ export class StudentIdComponent {
     )
 
    }
+   term:string ="";
+   filter(){
+     this._studentIDService.getFilteredStudentId(this.term).subscribe(
+       (data: any) => {
+         this.studentId = data;
+       },
+       (err: any) => {
+         alert("Internal error")
+       }
+     )
+   }
+
+
 }
