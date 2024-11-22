@@ -57,6 +57,7 @@ const routes: Routes = [
       {path:'create-account',component:CreateAccountComponent},
       {path:'student_id',component:StudentIdComponent},
       {path:'create-studentId',component:CreateStudentIdComponent},
+      
 
 
 
