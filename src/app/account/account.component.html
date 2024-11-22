@@ -1,0 +1,73 @@
+<input type="text" placeholder = "search" [(ngModel)]="term" (keyup)="filter()">
+
+
+<!-- sorted -->
+
+<select [(ngModel)]="column">
+    <option>account_name</option>
+    <option>available_balance</option>
+    <option>account_number</option>
+    <option>city</option>
+    <option>profie_picture</option>
+    <option>id</option>
+</select>
+<select [(ngModel)]="order">
+    <option value="asc">ascending</option>
+    <option value="desc">Descending</option>
+</select>
+
+<button (click)="sort()">Sort</button>
+
+<!-- pagination -->
+<select [(ngModel)]="limit">
+    <option>10</option>
+    <option>20</option>
+    <option>30</option>
+</select>
+
+<select [(ngModel)]="page">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+</select>
+    <button (click)="pagination()">pagination</button>
+
+   <!-- var post =new post(){
+    "account_name": "Rakesh",
+    "available_balance": 1000,
+    "account_number": 123456789,
+    "city": "Hyderabad",
+    "profie_picture": "https://example.com/profile_image.jpg",
+    "id": 1,
+    "another_property": "example"
+   } -->
+
+
+<table class="table table-danger table-hover table table-bordered border-primary">
+    <thead>
+        <tr>
+            <th>SNO.</th>
+            <th>account_name</th>
+            <th>available_balance</th>
+            <th>account_number</th>
+            <th>city</th>
+            <th>profie_picture</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let account of account; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ account.account_name }}</td>
+            <td>{{ account.available_balance }}</td>
+            <td>{{ account.account_number }}</td>
+            <td>{{ account.city }}</td>
+            <td>
+            <img src="{{account.profie_picture}}" alt="" width="100px"> 
+            </td> 
+            <td>
+                <button (click)="delete(account.id)" class="btn btn-danger">delete</button>
+            </td>  
+            
+        </tr>
+    </tbody>
+</table>

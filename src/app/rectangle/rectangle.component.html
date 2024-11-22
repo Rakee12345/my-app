@@ -1,0 +1,21 @@
+<div class="parent">
+    <div class="child">
+        <h1 class="title">Ractangle</h1>
+        <div class="Label1">
+            <div>
+        <label for="">Length:</label>
+            <input type="number" [(ngModel)]="length">
+        </div>
+            <label for="">Breadth:</label>
+            <input type="number" [(ngModel)]="breadth">
+        <div>
+            <button  [disabled]="!length||!breadth" (click)="area()">area</button>
+            <button  [disabled]="!length||!breadth" (click)="perimeter()">perimeter</button>
+            
+            
+        </div>
+        <h2>{{result}}</h2>
+    </div>
+     </div>
+</div>
+

@@ -1,0 +1,25 @@
+<div class="maincontainer">
+    <div class="container">
+        <h1 class="hyd">HYD Weather</h1>
+        <h1>Current Weather</h1>
+        <p>Location: {{weather.latitude}}, {{weather.longitude }}</p>
+        <p>Time: {{weather.current_weather.time | date: 'full': 'UTC+11:05'}}</p>
+        <p class="temp">Temperature: {{ weather.current_weather.temperature }}°C</p>
+        <p>Wind Speed: {{ weather.current_weather.windspeed }} km/h</p>
+        <p>Wind Direction: {{ weather.current_weather.winddirection }}°</p>
+        <p>Condition:{{(weather.current_weather.weathercode) }}</p> 
+        <div class="temperature-dot" [ngClass]="{
+            'blue':weather.current_weather.temperature < 0,
+            'yellow':weather.current_weather.temperature >= 0 && weather.current_weather.temperature <= 30,
+            'green':weather.current_weather.temperature > 30 && weather.current_weather.temperature <= 35,
+            'red':weather.current_weather.temperature > 35
+          }"></div>
+
+<p>Day/Night: {{weather.current_Weather === 1 ? 'Day time' : 'Night time' }}</p>
+</div>
+    </div>
+
+
+
+
+  

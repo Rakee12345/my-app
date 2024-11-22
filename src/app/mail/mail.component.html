@@ -1,0 +1,8 @@
+<div class="maincontainer">
+    <div class="container" *ngFor="let mail of mail" [ngClass]="{'thick':mail.completed==false,'lightcolor':mail.completed==true }">
+        <label class="me-4">{{mail.id}}</label>
+        <label>{{mail.title}}</label>
+        <label>{{mail.completed}}</label>
+    </div>
+
+</div>

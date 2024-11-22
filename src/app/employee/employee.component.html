@@ -1,0 +1,61 @@
+<h1>Empolyees</h1>
+
+<label for="">Name:</label>
+<input type="text" [(ngModel)]="name">
+<br>
+<label for="">Experience:</label>
+<input type="text" [(ngModel)]="experience">
+<br>
+<label for="">Package:</label>
+<input type="text" [(ngModel)]="package">
+<br>
+<label for="">Role:</label>
+<input type="text" [(ngModel)]="empRole">
+<br>
+<button class="btn btn-primary" (click)="add()">add</button>
+<br>
+<br>
+<button (click)="bonus()" class="btn btn-info">50 k Bonus</button>
+<button (click)="hike()" class="btn btn-info">30% Hike</button>
+
+<input class="form-control w-25" type="text" placeholder="Search Name"[(ngModel)]="term" (keyup)="search()">
+
+<select class="form-control w-50" [(ngModel)]="role" (change)="rolefilter()">
+    <option>UIDeveloper</option>
+    <option>Software Developer</option>
+    <option>Data engineer</option>
+    <option>Testing Engineer</option>
+
+</select>
+
+<button (click)="packagehl()" class="btn btn-warning">Package High to Low</button>
+<button (click)="packagelh()" class="btn btn-warning">Package Low to High</button>
+
+<button (click)="total()" class="btn btn-primary">Cost to Company</button>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>SNO</th>
+            <th>Name</th>
+            <th>Experience</th>
+            <th>Package</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Employee of employees;let i=index">
+            <td>{{i+1}}</td>
+            <td [ngClass]="{'text-danger':Employee.package<1000000,'text-success':Employee.package>=1000000}">{{Employee.name | uppercase}}</td>
+            <td>{{Employee.experience}}</td>
+            <td>{{Employee.package}}</td>
+            <td>{{Employee.role}}</td>
+            <td>
+                <!-- <button class="btn btn-danger">Delete</button> -->
+                <button *ngIf="Employee.package>500000" (click)="delete(i)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>

@@ -1,0 +1,9 @@
+<p>applicationblog works!</p>
+<div class="card my-2 bg-basic w-60 ms-5" *ngFor="let applicationblog of applicationblog">
+    <div class="card-body shadow p-3 mb-3 bg-body-tertiary rounded">
+<h6>{{applicationblog.id}}</h6>
+<h3>{{applicationblog.title}}</h3>
+<h5>{{applicationblog.author}} | {{applicationblog.date_published}}</h5>
+<p>{{applicationblog.content}}</p>
+    </div>
+  </div>

@@ -1,0 +1,33 @@
+<!-- <div class="parent">
+    <img src="/assets/data.png" alt="" width="90%" height="90%">
+</div> -->
+<!-- Interpolation -->
+<h1>my age is {{age}}</h1>
+<h1>my name is {{name}}</h1>
+<h1>Is Indian:{{isIndian}}</h1>
+
+<!-- property Binding -->
+ <button [disabled]="isInvalid">submit</button>
+
+<!-- Event Binkding -->
+ <button (click)="create()">create</button>
+ <input type="text" (keyup)="typing()">
+
+<!-- Two-Way Binding -->
+
+<input type="text" [(ngModel)]="phone">
+
+============================================
+
+<h1>Calculator</h1>
+
+<label for="">num1:</label>
+<input type="number" [(ngModel)]="num1">
+<br>
+
+<label for="">num2:</label>
+<input type="number" [(ngModel)]="num2">
+
+<button [disabled]="!num1 || !num2" (click)="sum()">sum</button>
+
+<h1>{{result}}</h1>

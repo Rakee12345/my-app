@@ -1,0 +1,20 @@
+<div class="parent ">
+  <div class="child" *ngFor="let studentId of studentId">
+    
+    
+    <div class="data">
+    
+    <h3>{{studentId.name}}</h3>
+    <p>phone: {{studentId.phone}}</p>
+    <p>city: {{studentId.city}}</p>
+    <p>dob: {{studentId.dob}}</p>
+    <p>email: {{studentId.email}}</p>
+    <p>school_name: {{studentId.school_name}}</p>
+    <p>school_city: {{studentId.school_city}}</p>
+    <p>school_pin: {{studentId.school_pin}}</p>
+  </div>
+  <img class="image1" src="{{studentId.school_logo}}" alt="">
+    <img class="image2" src="{{studentId.profile_picture}}" alt="">
+  </div>
+    
+    </div>

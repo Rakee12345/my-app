@@ -1,0 +1,29 @@
+<p>imdb works!</p>
+<div class="card bg-dark my-2 ms-5 me-5" *ngFor="let imdb of imdb">
+    <div class="card-body">
+        <h3>{{imdb.movie}}</h3>
+        <h3>{{imdb.rating}}
+        
+            <span *ngFor="let star of [].constructor(Math.floor(imdb.rating))">
+                <img
+                  src="https://img.freepik.com/free-vector/basic-star-flat-vector_78370-1483.jpg?t=st=1731987078~exp=1731990678~hmac=00eea7759f74d860c95f71b18a680f5de0693bd0b18476ebdeb1cf0ccc1ea2a1&w=740"
+                  width="20px"
+                  height="20px"
+                  alt="Star Icon"
+                />
+              </span>
+              <!-- <span *ngIf="imdb.rating % 1 !== 0">
+                <img
+                  src="https://img.freepik.com/free-vector/half-star-icon_78370-2725.jpg"
+                  width="20px"
+                  height="20px"
+                  alt="Half Star Icon"
+                />
+              </span> -->
+        </h3>
+        <a href="{{imdb.imdb_url}}" class="btn btn-outline-success" target="_blank">View on IMDB</a>
+        
+
+    </div>
+
+  </div>

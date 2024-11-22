@@ -1,0 +1,46 @@
+<p>directives works!</p>
+
+<h3 *ngFor="let age of ages">ages:{{age}}</h3>
+
+
+<ul>
+    <li *ngFor="let state of states">{{state}}</li>
+
+
+</ul>
+
+<select name=""id="">
+    <option *ngFor="let state of states" >{{state}}</option>
+</select>
+
+<h1 *ngFor="let product of products">{{product.name}} price is {{product.price}}</h1>
+
+
+<table border="2" class="table table-dark">
+    <thead>
+        <tr>
+            <th>SNO</th>
+            <th>Name</th>
+            <th>price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products;let i=index">
+            <td>{{i+1}}</td>
+            <!-- pipes |uppercase lowercase -->
+            <td>{{product.name | uppercase}}</td>
+            <!-- two color -->
+            <td [ngStyle]="{'color':product.price<1000 ? 'green':'red'}">{{product.price}}</td>
+
+            <!-- morethan 2 colors using css -->
+            <td [ngClass]="{'green':product.price<1000, 'red':product.price>1000}">{{product.price}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h1 *ngIf="false">Hello</h1>
+<h1 *ngIf="true">welcome</h1>
+<!-- pipes date pipe angular google -->
+<h1>{{today | date}}</h1>
+<h1>{{today | date:"dd/MM/yyyy"}}</h1>
+<h1>{{today | date:"yy-MM-dd"}}</h1>
