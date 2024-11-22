@@ -48,12 +48,13 @@
 
 
 <h1 style="text-align: center;">Pokemon</h1>
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<div class="parent">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <!-- Loop through pokemans array -->
        <div class="middle">
       <div class="carousel-item  card " *ngFor="let pokemon of pokemans; let i = index" [class.active]="i === 0">
-        <img src="{{pokemon.image_url}}" class="d-block w-25" alt="{{ pokemon.pokemon }}">
+        <img src="{{pokemon.image_url}}" class="d-block w-50" alt="{{ pokemon.pokemon }}">
         <!-- <div class="carousel-caption d-none d-md-block titles" > -->
           <h1>{{ pokemon.pokemon }}</h1>
           <p><b>Type:</b> {{ pokemon.type }}</p>
@@ -75,5 +76,7 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
+</div>
+
   <!-- </div> -->
   
