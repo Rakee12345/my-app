@@ -21,7 +21,7 @@ export class StudentIdService {
     return this._httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/student?sortBy="+column +"&order="+order);
   }
 
-  getPagedStudentId(limit:number , page: number):Observable<any>{
+  getPagedStudentId(limit:number, page:number):Observable<any>{
     return this._httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/student?limit="+limit+"&page="+page);
   }
   createStudentId(data:any):Observable<any> {
@@ -30,7 +30,8 @@ export class StudentIdService {
   }
 
   deleteStudentId(studentId:string):Observable<any> {
-    return this._httpClient.delete("https://6128991386a213001729f9df.mockapi.io/test/v1/student/"+studentId);
+    return this._httpClient.delete("https://6128991386a213001729f9df.mockapi.io/test/v1/student/"+ studentId);
+
 
   }
 

@@ -54,7 +54,7 @@ pagination(){
   this._studentIDService.getPagedStudentId(this.limit, this.page).subscribe(
     (data: any) => {
       this.studentId = data;
-      location.reload();
+      
     },
     (err: any) => {
       alert("Internal error")
@@ -63,7 +63,6 @@ pagination(){
 }
 
 delete(id:string){
-  console.log(id)
   if(confirm("Are you sure you want to delete this student ID?")){
     this._studentIDService.deleteStudentId(id).subscribe(
       (data: any) => {

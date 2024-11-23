@@ -57,9 +57,11 @@
          
       </div>      
       <div class="card-footer">
-          <button class="btn btn-primary m-3">View</button>
-          <button class="btn btn-info m-3" (click)="edit()">Edit</button>
-          <button class="btn btn-danger m-3" (click)="delete(studentId.id)">Delete</button>
+        <button class="btn btn-primary m-3">View</button>
+        <button class="btn btn-info m-3" (click)="edit()">Edit</button>
+        <button (click)="delete(studentId.id)" class="btn btn-danger m-3">Delete</button>
+          
       </div>
+      
   </div>
 </body>
