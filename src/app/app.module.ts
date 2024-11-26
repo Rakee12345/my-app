@@ -34,6 +34,20 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { StudentIdComponent } from './student-id/student-id.component';
 import { CreateStudentIdComponent } from './create-student-id/create-student-id.component';
 import { SocialProfileComponent } from './social-profile/social-profile.component';
+import { TodolistComponent } from './todolist/todolist.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatButtonModule} from '@angular/material/button';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatCardModule} from '@angular/material/card';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatCommonModule} from '@angular/material/core';
+import {MatIconModule} from '@angular/material/icon';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 @NgModule({
   declarations: [
@@ -66,14 +80,29 @@ import { SocialProfileComponent } from './social-profile/social-profile.componen
     CreateAccountComponent,
     StudentIdComponent,
     CreateStudentIdComponent,
-    SocialProfileComponent
+    SocialProfileComponent,
+    TodolistComponent,
+    CreateUserComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatSliderModule,
+    MatBadgeModule,
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatCommonModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

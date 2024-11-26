@@ -29,6 +29,8 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { StudentIdComponent } from './student-id/student-id.component';
 import { CreateStudentIdComponent } from './create-student-id/create-student-id.component';
 import { SocialProfileComponent } from './social-profile/social-profile.component';
+import { TodolistComponent } from './todolist/todolist.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
@@ -59,7 +61,8 @@ const routes: Routes = [
       {path:'student_id',component:StudentIdComponent},
       {path:'create-studentId',component:CreateStudentIdComponent},
       {path:'social-profile',component:SocialProfileComponent},
-      
+      {path:'todolist',component:TodolistComponent},
+      {path:'create-user',component:CreateUserComponent},
 
 
 

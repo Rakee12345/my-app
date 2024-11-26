@@ -101,5 +101,13 @@ GIT:
    (git hub)
 
 
+Forms:
+======
 
+1) FormGroup
+2) Nested FormGroup
+3) Dynamic FormGroup
+4) FormArray
+5) Validations
+6)  Custom Validations
 
