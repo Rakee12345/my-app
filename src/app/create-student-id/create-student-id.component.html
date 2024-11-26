@@ -1,0 +1,36 @@
+<h1>Create studentId</h1>
+
+<form [formGroup]="studentIdForm">
+    <label for="">name:</label>
+    <input type="text" formControlName="name">
+    <br>
+    <label for="">phone:</label>
+    <input type="text" formControlName="phone">
+    <br>
+    <label for="">city:</label>
+    <input type="text" formControlName="city">
+    <br>
+    <label for="">dob:</label>
+    <input type="text" formControlName="dob">
+    <br>
+    <label for="">profile_picture:</label>
+    <input type="text" formControlName="profile_picture">
+    <br>
+    <label for="">email:</label>
+    <input type="text" formControlName="email">
+    <br>
+    <label for="">school_logo:</label>
+    <input type="text" formControlName="school_logo">
+    <br>
+    <label for="">school_name:</label>
+    <input type="text" formControlName="school_name">
+    <br>
+    <label for="">school_city:</label>
+    <input type="text" formControlName="school_city">
+    <br>
+    <label for="">school_pin:</label>
+    <input type="text" formControlName="school_pin">
+    <br>
+
+    <button (click)="submit()" class="btn btn-warning m-5">Submit</button>
+</form>

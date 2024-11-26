@@ -34,5 +34,48 @@ export class StudentIdComponent {
      )
    }
 
+column:string =""
+order:string =""
 
+sort(){
+  this._studentIDService.getSortedStudentId(this.column, this.order).subscribe(
+    (data: any) => {
+      this.studentId = data;
+    },
+    (err: any) => {
+      alert("Internal error")
+    }
+  )
+}
+
+limit:number =0;
+page:number =0;
+pagination(){
+  this._studentIDService.getPagedStudentId(this.limit, this.page).subscribe(
+    (data: any) => {
+      this.studentId = data;
+      
+    },
+    (err: any) => {
+      alert("Internal error")
+    }
+  )
+}
+
+delete(id:string){
+  if(confirm("Are you sure you want to delete this student ID?")){
+    this._studentIDService.deleteStudentId(id).subscribe(
+      (data: any) => {
+        alert("Student ID deleted successfully");
+      },
+      (err: any) => {
+        alert("Internal error")
+      }
+    )
+  }
+}
+
+edit(){
+  alert("Edit Student")
+}
 }
