@@ -1,29 +1,36 @@
 // import { Component, OnInit } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.less']
 })
-export class LoginComponent implements OnInit {
-  username: string = '';
-  password: string = '';
-  errorMessage: string = '';
+export class LoginComponent{
 
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
+  public liginForm: FormGroup=new FormGroup({
+    email: new FormControl(),
+    password: new FormControl(),
+  })
+  
+  constructor(private _loginService: LoginService) { }
+  login(){
+  
+      console.log(this.liginForm);
+      this._loginService.login(this.liginForm.value).subscribe(
+        (data:any) => {
+           alert("Login successful")
+        },
+          
+        
+        (err:any) => {
+          alert("invalid Credentials");
+        }
+      )
+      
   }
 
-  login(): void {
-    // Call API to authenticate user
-    // For demo purposes, assume authentication is successful
-    if (this.username === 'admin' && this.password === 'password') {
-      this.router.navigate(['/dashboard']);
-    } else {
-      this.errorMessage = 'Invalid username or password';
-    }
-  }
 }
