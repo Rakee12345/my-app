@@ -16,13 +16,17 @@ export class LoginComponent{
     password: new FormControl(),
   })
   
-  constructor(private _loginService: LoginService) { }
+  constructor(private _loginService: LoginService, private _router:Router) { }
   login(){
   
       console.log(this.liginForm);
       this._loginService.login(this.liginForm.value).subscribe(
         (data:any) => {
-           alert("Login successful")
+           alert("Login successful!!!");
+          //  go to dashboard
+          this._router.navigateByUrl('/dashboard');
+          // store token
+          sessionStorage.setItem('token',data.token);
         },
           
         
