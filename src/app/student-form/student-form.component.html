@@ -1,0 +1,83 @@
+<p>student-form works!</p>
+<form [formGroup]="studentForm">
+    <label for="">Name</label>
+    <input type="text" formControlName="name">
+    <div *ngIf="studentForm.get('name')?.touched && studentForm.get('name')?.invalid">
+        <p class="error" *ngIf="studentForm.get('name')?.errors?.['required']">Name is required</p>
+        <p class="error" *ngIf="studentForm.get('name')?.errors?.['required']">Name is required</p>
+        <p class="error" *ngIf="studentForm.get('name')?.errors?.['required']">Name is required</p>
+    </div>
+    <br>
+    <label for="">Class</label>
+    <input type="text" formControlName="class">
+    <br>
+    <label for="">FatherName</label>
+    <input type="text" formControlName="fathername">
+    <br>
+    <label for="">Email</label>
+    <input type="email" formControlName="email">
+    <br>
+    <label for="">DOB</label>
+    <input type="date" formControlName="dob">
+
+    <div formGroupName="address">
+        <label for="">AddressLine:</label>
+    <input type="text" formControlName="addressline">
+    <br>
+    <label for="">City:</label>
+    <input type="text" formControlName="city">
+    <br>
+    <label for="">State:</label>
+    <input type="text" formControlName="state">
+    <br>
+    <label for="">Pincode:</label>
+    <input type="number" formControlName="pincode">
+    <br>
+    </div>
+
+    <label for="">Type:</label>
+<input type="radio" name="type" formControlName="type" value="dayScholor">
+<label for="">DayScholor:</label>
+<input type="radio" name="type" formControlName="type" value="residential">
+<label for="">Residential:</label>
+<br>   
+<div *ngIf="studentForm.get('type')?.value=='dayScholor'">
+    <label for="">Bus Fee:</label>
+    <input type="number" formControlName="busFee">
+    <br>
+</div>
+<div *ngIf="studentForm.get('type')?.value=='residential'">
+    <label for="">Hostel Fee:</label>
+    <input type="number" formControlName="hostelFee">
+    <br>
+</div>
+    
+    <label for="">Marks:</label>
+    <button class="btn btn-warning" (click)="addMarks()">ADD Marks</button>
+    <br>
+ 
+      <div formArrayName="marks">
+        <div *ngFor="let marks of marksFromArray.controls;let i=index">
+            <div formGroupName="{{i}}">
+                <h2>Marks{{i+1}}</h2>
+
+                <label for="">Marks:</label>
+                <input type="number" formControlName="marks">
+                <br>
+                <label for="">Year:</label>
+                <input type="number" formControlName="year">
+                <br>
+                <label for="">Percentage:</label>
+                <input type="number" formControlName="percentage">
+                <br>
+
+                <button class="btn btn-danger" (click)="deleteMarks(i)">Delete</button>
+
+                <hr>
+
+            </div>
+        </div>
+      </div>
+     
+    <button (click)="submit()" class="btn btn-warning">Submit</button>
+</form>
