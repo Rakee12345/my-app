@@ -32,10 +32,11 @@ import { SocialProfileComponent } from './social-profile/social-profile.componen
 import { TodolistComponent } from './todolist/todolist.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { StudentFormComponent } from './student-form/student-form.component';
+import { AuthenticationGuard } from './authentication.guard';
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
-  {path: 'dashboard', component:DashboardComponent, children:[
+  {path: 'dashboard', canActivate:[AuthenticationGuard], component:DashboardComponent, children:[
       {path: 'home', component: HomeComponent},
       {path:'welcome',component:WelcomeComponent},
       {path:'DataBinding',component:DataBindingComponent},
