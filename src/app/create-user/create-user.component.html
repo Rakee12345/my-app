@@ -22,18 +22,39 @@
     <br>
     <label for="">Email:</label>
     <input type="text" formControlName="email">
+
+    <div *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid">
+        
+        <p class="error" *ngIf="userForm.get('email')?.errors?.['required']">Email is required</p>
+        <p class="error" *ngIf="userForm.get('email')?.errors?.['email']">invalid email format</p>
+        
+    </div>
     <br>
     <label for="">Phone:</label>
     <input type="number" formControlName="phone">
+
+    <div *ngIf="userForm.get('phone')?.touched && userForm.get('phone')?.invalid">
+        
+        <p class="error" *ngIf="userForm.get('phone')?.errors?.['required']">Phone is required</p>
+        <p class="error" *ngIf="userForm.get('phone')?.errors?.['min']">min 10 digits</p>
+        <p class="error" *ngIf="userForm.get('phone')?.errors?.['max']">max 10 digits</p>
+    </div>
     <br>
 
     <!-- Nested FormGroup -->
 <div formGroupName="address">
     <label for="">City:</label>
     <input type="text" formControlName="city">
+    <div *ngIf="userForm.get('address')?.get('city')?.touched && userForm.get('address')?.get('city')?.invalid">
+        <p class="error" *ngIf="userForm.get('address')?.get('city')?.errors?.['required']">city is required</p>
+    </div>
+
     <br>
     <label for="">Pin:</label>
     <input type="number" formControlName="pin">
+    <div *ngIf="userForm.get('address')?.get('pin')?.touched && userForm.get('address')?.get('pin')?.invalid">
+        <p class="error" *ngIf="userForm.get('address')?.get('pin')?.errors?.['required']">pin is required</p>
+    </div>
     <br>
 </div>
 <!-- dynamic FormGroup -->
@@ -66,6 +87,13 @@
 
                 <label for="">Card Number:</label>
                 <input type="number" formControlName="number">
+
+                <div *ngIf="cardsFormArray.controls[i]?.get('number')?.touched && cardsFormArray.controls[i]?.get('number')?.invalid">
+                    <p class="error" *ngIf="cardsFormArray.controls[i]?.get('number')?.errors?.['required']">Number is required</p>
+                    <p class="error" *ngIf="cardsFormArray.controls[i]?.get('number')?.errors?.['required']">Number is required</p>
+            
+            
+                </div>
                 <br>
                 <label for="">Card Expiry:</label>
                 <input type="month" formControlName="expiry">

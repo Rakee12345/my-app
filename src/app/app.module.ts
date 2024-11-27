@@ -48,6 +48,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatCommonModule} from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { StudentFormComponent } from './student-form/student-form.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
     SocialProfileComponent,
     TodolistComponent,
     CreateUserComponent,
+    StudentFormComponent,
     
   ],
   imports: [
