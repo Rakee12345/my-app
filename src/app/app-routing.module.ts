@@ -33,6 +33,7 @@ import { TodolistComponent } from './todolist/todolist.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { StudentFormComponent } from './student-form/student-form.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
@@ -66,6 +67,8 @@ const routes: Routes = [
       {path:'todolist',component:TodolistComponent},
       {path:'create-user',component:CreateUserComponent},
       {path:'student-form',component:StudentFormComponent},
+      {path:'vehicle-details/:id',component:VehicleDetailsComponent},
+      {path:'edit-vehicle/:id',component:CreateVehicleComponent},
 
 
 

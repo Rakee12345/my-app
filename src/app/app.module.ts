@@ -49,6 +49,7 @@ import {MatCommonModule} from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { StudentFormComponent } from './student-form/student-form.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { StudentFormComponent } from './student-form/student-form.component';
     TodolistComponent,
     CreateUserComponent,
     StudentFormComponent,
+    VehicleDetailsComponent,
     
   ],
   imports: [
