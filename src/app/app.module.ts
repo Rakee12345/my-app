@@ -50,6 +50,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { StudentFormComponent } from './student-form/student-form.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { AccountDetailsComponent } from './account-details/account-details.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +88,7 @@ import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.compo
     CreateUserComponent,
     StudentFormComponent,
     VehicleDetailsComponent,
+    AccountDetailsComponent,
     
   ],
   imports: [
