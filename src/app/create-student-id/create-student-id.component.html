@@ -1,4 +1,4 @@
-<h1>Create studentId</h1>
+<h1>{{id ? "update Idcard":"create id card"}}</h1>
 
 <form [formGroup]="studentIdForm">
     <label for="">name:</label>
@@ -32,5 +32,5 @@
     <input type="text" formControlName="school_pin">
     <br>
 
-    <button (click)="submit()" class="btn btn-warning m-5">Submit</button>
+    <button (click)="submit()" class="btn btn-warning m-5">{{id ? "update":"submit"}}</button>
 </form>

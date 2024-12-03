@@ -51,6 +51,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { StudentFormComponent } from './student-form/student-form.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
+// import { CreateStudentidComponent } from './create-studentid/create-studentid.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
 
 @NgModule({
   declarations: [
@@ -89,12 +91,15 @@ import { AccountDetailsComponent } from './account-details/account-details.compo
     StudentFormComponent,
     VehicleDetailsComponent,
     AccountDetailsComponent,
+    // CreateStudentidComponent,
+    StudentDetailsComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
