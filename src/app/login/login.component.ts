@@ -11,7 +11,7 @@ import { LoginService } from '../login.service';
 })
 export class LoginComponent{
 
-  public liginForm: FormGroup=new FormGroup({
+  public loginForm: FormGroup=new FormGroup({
     email: new FormControl(),
     password: new FormControl(),
   })
@@ -19,8 +19,8 @@ export class LoginComponent{
   constructor(private _loginService: LoginService, private _router:Router) { }
   login(){
   
-      console.log(this.liginForm);
-      this._loginService.login(this.liginForm.value).subscribe(
+      console.log(this.loginForm);
+      this._loginService.login(this.loginForm.value).subscribe(
         (data:any) => {
            alert("Login successful!!!");
           //  go to dashboard
