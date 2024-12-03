@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AccountService } from '../account.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-create-account',
@@ -8,8 +9,22 @@ import { AccountService } from '../account.service';
   styleUrls: ['./create-account.component.less']
 })
 export class CreateAccountComponent {
-
-  constructor(private _accountSevice:AccountService) { }
+ id:string = "";
+  constructor(private _accountSevice:AccountService , private _activatedRoute:ActivatedRoute) {
+    _activatedRoute.params.subscribe(
+      (data:any) => {
+        console.log(data);
+        this.id = data.id;
+        // api call
+        _accountSevice.getaccounts(data.id).subscribe(
+          (data:any) => {
+            this.accountForm.patchValue(data);
+          },
+         
+        )
+      }
+    )
+   }
 
 public accountForm:FormGroup = new FormGroup(
   {
@@ -22,17 +37,28 @@ public accountForm:FormGroup = new FormGroup(
 )
 
 submit(){
-  console.log(this.accountForm);
-  this._accountSevice.createAccount(this.accountForm.value).subscribe(
-    (data:any) => {
-      alert("Account created successfully");
-      
-    },
-    (err:any) => {
-      alert("creation failed");
+  if(this.id){
+    this._accountSevice.updateAccount(this.id, this.accountForm.value).subscribe(
+      (data:any) => {
+        alert("Account updated successfully");
+        location.reload();
+      },
+      (err:any) => {
+        alert("update failed");
+      }
+    )
+  }
+  else{
+    this._accountSevice.createAccount(this.accountForm.value).subscribe(
+      (data:any) => {
+        alert("Account created successfully");
+        location.reload();
+      },
+      (err:any) => {
+        alert("creation failed");
 
-    }
-  )
+      }
+    )
+  }
 }
-
 }
