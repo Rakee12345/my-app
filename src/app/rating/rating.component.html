@@ -1,0 +1,7 @@
+<!-- <p>rating works!</p> -->
+<img src="/assets/5star.jpeg" alt="" height="30px" width="100px" *ngIf="rating>5 && rating==5" >
+<img src="/assets/4star.jpeg" alt="" height="30px" width="100px" *ngIf="rating<5 && rating>=4">
+<img src="/assets/3star.jpeg" alt="" height="30px" width="100px" *ngIf="rating<4 && rating>=3">
+<img src="/assets/2star.jpeg" alt="" height="30px" width="100px" *ngIf="rating<3 && rating>=2">
+<img src="/assets/1star.jpeg" alt="" height="30px" width="100px" *ngIf="rating<2 && rating>=1">
+

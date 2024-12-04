@@ -36,6 +36,9 @@ import { AuthenticationGuard } from './authentication.guard';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
+import { ParentComponent } from './parent/parent.component';
+import { SiblingsComponent } from './siblings/siblings.component';
+import { RatingComponent } from './rating/rating.component';
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
@@ -76,6 +79,10 @@ const routes: Routes = [
 
       {path:'student-details/:id',component:StudentDetailsComponent},
       {path:'edit-studentid/:id',component:CreateStudentIdComponent},
+      {path:'parent',component:ParentComponent},
+      {path:'siblings',component:SiblingsComponent},
+      {path:'rating',component:RatingComponent},
+
       
 
 

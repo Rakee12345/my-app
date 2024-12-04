@@ -112,7 +112,21 @@ Forms:
 6)  Custom Validations
 
 
+Communications:
+===============
 
+1) component communication
+-> parent to child
+->child to parent
+
+@Output(BEvent)
+
+->sibling
+
+
+
+2) page communication(view,edit)
+3) module communication
 
 
 

@@ -2,12 +2,12 @@
     <div class="container" *ngFor="let product of products">
         <img class="img" src="{{product.image}}" alt="">
         <div class="rate">
-            <span >{{product.rating.rate}}</span>
+            <app-rating [rating]="product.rating.rate"></app-rating>
         </div>
         <h2 class="category">{{product.category}}</h2>
         <h1 class="title">{{product.title}}</h1>
         <h5 class="price">Rs. {{product.price}}</h5>
-        
+       
     </div>
     
 </div>

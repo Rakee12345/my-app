@@ -51,8 +51,13 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { StudentFormComponent } from './student-form/student-form.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
-// import { CreateStudentidComponent } from './create-studentid/create-studentid.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { RatingComponent } from './rating/rating.component';
+import { SiblingsComponent } from './siblings/siblings.component';
+import { Siblings1Component } from './siblings1/siblings1.component';
+import { Siblings2Component } from './siblings2/siblings2.component';
 
 @NgModule({
   declarations: [
@@ -91,15 +96,19 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
     StudentFormComponent,
     VehicleDetailsComponent,
     AccountDetailsComponent,
-    // CreateStudentidComponent,
     StudentDetailsComponent,
+    ParentComponent,
+    ChildComponent,
+    RatingComponent,
+    SiblingsComponent,
+    Siblings1Component,
+    Siblings2Component,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
