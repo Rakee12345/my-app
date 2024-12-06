@@ -123,10 +123,27 @@ Communications:
 
 ->sibling
 
-
-
 2) page communication(view,edit)
 3) module communication
+
+
+
+CUSTOMS:
+========
+
+1) Custom Directives
+2) Custom Pipe
+<!-- examples -->
+<h1>{{today | date}}</h1>
+<h1>{{today | date:"dd/MM/yyyy"}}</h1>
+<h1>{{today | date:"yy-MM-dd"}}</h1>
+
+3) Custom Datatype /Custom Models / Custom Interface ************important
+
+4) Custom API
+5) Custom Validator
+6) Custom Interceptor
+7) custom Command
 
 
 

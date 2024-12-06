@@ -20,7 +20,7 @@ import { EmployeeRegistrationComponent } from './employee-registration/employee-
 import { EmployeeComponent } from './employee/employee.component';
 import { FlipkartComponent } from './flipkart/flipkart.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AccountComponent } from './account/account.component';
 import { AmazonComponent } from './amazon/amazon.component';
 import { MailComponent } from './mail/mail.component';
@@ -58,6 +58,10 @@ import { RatingComponent } from './rating/rating.component';
 import { SiblingsComponent } from './siblings/siblings.component';
 import { Siblings1Component } from './siblings1/siblings1.component';
 import { Siblings2Component } from './siblings2/siblings2.component';
+import { PricePipe } from './price.pipe';
+import { CapitalDirective } from './capital.directive';
+import { TokenInterceptor } from './token.interceptor';
+import { AboutUsModule } from './about-us/about-us.module';
 
 @NgModule({
   declarations: [
@@ -103,6 +107,8 @@ import { Siblings2Component } from './siblings2/siblings2.component';
     SiblingsComponent,
     Siblings1Component,
     Siblings2Component,
+    PricePipe,
+    CapitalDirective,
     
   ],
   imports: [
@@ -123,8 +129,15 @@ import { Siblings2Component } from './siblings2/siblings2.component';
     MatChipsModule,
     MatCommonModule,
     MatIconModule,
+    AboutUsModule,
   ],
-  providers: [],
+  providers: [
+    {
+        provide: HTTP_INTERCEPTORS,
+        useClass: TokenInterceptor,
+        multi: true
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

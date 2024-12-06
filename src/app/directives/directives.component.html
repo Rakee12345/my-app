@@ -1,11 +1,8 @@
 <p>directives works!</p>
-
 <h3 *ngFor="let age of ages">ages:{{age}}</h3>
-
 
 <ul>
     <li *ngFor="let state of states">{{state}}</li>
-
 
 </ul>
 
@@ -33,7 +30,7 @@
             <td [ngStyle]="{'color':product.price<1000 ? 'green':'red'}">{{product.price}}</td>
 
             <!-- morethan 2 colors using css -->
-            <td [ngClass]="{'green':product.price<1000, 'red':product.price>1000}">{{product.price}}</td>
+            <td [ngClass]="{'greenClass':product.price<1000, 'redClass':product.price>1000 && product.price<2500,'yellowClass':product.price>2500 && product.price<50000}">{{product.price}}</td>
         </tr>
     </tbody>
 </table>
